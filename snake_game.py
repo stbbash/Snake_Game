@@ -4,7 +4,8 @@ import random
 import time
 
 #creating screen
-
+player_name = input("Hello! Welcome to my Snake Game \nPlease enter your name to play: ")
+player_name = player_name.capitalize()
 screen = turtle.Screen()
 screen.title("SNAKE GAME")
 screen.setup(width=700, height=700)
@@ -145,8 +146,8 @@ while True:
         screen.clear()
         screen.bgcolor("turquoise")
         scoring.goto(0, 0)
-        scoring.write("     Game Over \n Your score is {}".format(score), align="center", font=("Courier", 30, "bold"))
-        
+        scoring.write(" Game Over {}\n Your score is {}".format(player_name, score), align="center", font=("Courier", 30, "bold"))
+
         
     #snake collisions
     for food in old_fruit:
@@ -155,7 +156,7 @@ while True:
             screen.clear()
             screen.bgcolor("turquoise")
             scoring.goto(0, 0)
-            scoring.write("     Game Over \n Your score is {}".format(score), align="center", font=("Courier", 30, "bold"))
+            scoring.write(" Game Over {}\n Your score is {}".format(player_name, score), align="center", font=("Courier", 30, "bold"))
     
     time.sleep(delay)
     
